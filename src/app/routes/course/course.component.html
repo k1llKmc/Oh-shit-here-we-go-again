@@ -1,0 +1,25 @@
+<div class="courseDetails">
+  <div class="courseDetails-top"><img class="courseDetails-img" [src]="'/assets/icons/' + card?.key" alt="">
+    <h2 class="courseDetails-title">{{ card?.name }}</h2>
+  </div>
+  <span class=" courseDetails-descr">{{ card?.descr }}</span>
+  <div class="courseDetails__what">
+    <h3 class="courseDetails__what-title">Чем занимается спец. этой должности?</h3>
+    <span class="courseDetails__what-text">{{ card?.what }}</span>
+  </div>
+  <app-why></app-why>
+  <div class="courseDetails__priceList">
+    <h3 class="courseDetails__priceList-title">Стоимость <p class="highlighted">курса</p>
+    </h3>
+    <div class="courseDetails__priceList__grid">
+      <div class="courseDetails__priceList__price fullPaid">
+        <h4 class="courseDetails__priceList__price-title">Стоимость всего курса:</h4>
+        <span class="courseDetails__priceList__price-price"> {{ (( card?.duration ?? 0 ) * ( card?.price ?? 0 )) |
+          priceFormat }}
+          <span class="info">( {{card?.duration}} мес. * {{(card?.price ?? 0) | priceFormat}} сум/мес. ) <p
+              class="attention">*</p></span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

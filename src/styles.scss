@@ -1,0 +1,44 @@
+$index: calc(1vh + 1vw);
+
+@font-face {
+  font-family: "Onest";
+  src: url("../public/assets/fonts/Onest.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: "Onest";
+  color: white;
+  scroll-behavior: smooth;
+}
+
+.body {
+  padding: 20px 40px;
+  background-color: #181818;
+}
+
+.highlighted {
+  color: #61d93e;
+  display: inline-block;
+}
+
+.info {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.attention {
+  color: #61d93e;
+  font-weight: 600;
+  display: inline-block
+}
+
+button {
+  border-radius: 7px;
+  cursor: pointer;
+}

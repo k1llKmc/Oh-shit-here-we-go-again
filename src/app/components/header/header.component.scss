@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &-link {
+      font-size: 24px;
+      color: white;
+
+      select{
+        background-color: transparent;
+        font-size: 24px;
+        color: #fff;
+        background-color: #181818;
+      }
+    }
+
+    &-btn {
+      padding: 6px 20px;
+      background-color: #61d93e;
+      font-size: 24px;
+      color: white;
+    }
+  }
+}

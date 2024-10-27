@@ -1,0 +1,70 @@
+.footer {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: start;
+  gap: 50px;
+  padding: 50px 100px;
+  background-color: #111;
+  user-select: none;
+
+  &-logo {
+    height: 100px;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 100px;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    &-link {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.4);
+      line-height: 100%;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        color: white;
+      }
+
+      &.selectedLang {
+        color: rgba(255, 255, 255, 0.2);
+        cursor: not-allowed;
+      }
+    }
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 155px;
+
+      &-title {
+        font-size: 32px;
+        font-weight: 500;
+        color: white;
+        cursor: default;
+      }
+
+      &-adress{
+        color: white;
+        font-size: 12px;
+      }
+
+      &.contacts {
+        .footer__nav-link {
+          color: rgba(104, 229, 66, 0.4);
+
+          &:hover {
+            color: #67e542;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<div class="home">
+  <div class="home__grid">
+    <div class="home__grid__mainBlock mainBlock">
+      <h1 class="home__grid__mainBlock-title">
+        Узнайте, как мы готовим IT специалистов <p class="highlighted">мирового уровня!</p>
+      </h1>
+      <span class="home__grid__mainBlock-description">
+        Приходите на бесплатную экскурсию по нашей академии и окунитесь в мир современных технологий.
+      </span>
+      <img src="/assets/icons/Code.svg" alt="" class="home__grid__mainBlock-img">
+    </div>
+
+    <div class="home__grid__smallBlock course" *ngFor="let course of courses">
+      <div class="home__grid__smallBlock-text">
+        <h3 class="home__grid__smallBlock-title">{{ course.name }}</h3>
+        <p class="home__grid__smallBlock-duration">{{ course.duration }} мес.</p>
+      </div>
+      <button [routerLink]="['/course', course.id]" class="home__grid__smallBlock-btn">Узнать больше</button>
+      <img class="home__grid__smallBlock-img" [src]="'/assets/icons/' + course.key" alt="">
+
+    </div>
+
+    <div class="home__grid__smallBlock event">
+      <h3 class="home__grid__smallBlock-title">{{ events[0].title }}</h3>
+      <p class="home__grid__smallBlock-more">Подробнее</p>
+      <img class="home__grid__smallBlock-img" [src]="'/assets/icons/' + events[0].key" alt="">
+
+    </div>
+
+    <div class="home__grid__bigBlock">
+      <h3>Записаться на <p class="highlighted">экскурсию</p>
+      </h3>
+      <form action="" class="home__grid__bigBlock-form">
+        <input type="text" placeholder="Ф.И.О">
+        <input type="number" placeholder="(XX) XXX-XX-XX">
+      </form>
+      <button type="button">Отправить заявку</button>
+    </div>
+  </div>
+</div>
+<app-why></app-why>
+<app-courses>
