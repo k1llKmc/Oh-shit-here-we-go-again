@@ -28,8 +28,13 @@ $index: calc(1vh + 1vw);
   display: inline-block;
 }
 
-.info {
+.footnote {
   color: rgba(255, 255, 255, 0.4);
+  font-size: 20px;
+}
+
+.info{
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .attention {

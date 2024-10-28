@@ -1,7 +1,7 @@
 .courseDetails {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   padding: 60px 0 20px;
 
   &-top {
@@ -41,11 +41,11 @@
   &__priceList {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 20px;
     padding: 60px 0 20px;
 
     &-title {
-      font-size: 40px;
+      font-size: 48px;
     }
 
     &__grid{
@@ -57,16 +57,51 @@
       grid-template-rows: 1fr;
     }
 
-    &__price{
+    &__block{
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      align-items: start;
+      position: relative;
+      gap: 10px;
       background-color: #282828;
       border-radius: 20px;
       padding: 25px;
+      background-image: url('../../../../public/assets/icons/bg/Vector 16.svg');
+      background-repeat: no-repeat;
+      background-position: 100% 100%;
+
+      &.byParts{
+        border: #61d93e 3px solid;
+
+        .popular{
+          padding: 10px 20px;
+          background-color: #61d93e;
+          font-weight: 500;
+          font-size: 22px;
+          border-radius: 100px;
+          position: absolute;
+          right: 25px;
+          transform: rotate(-4deg);
+        }
+      }
 
       &-title{
         font-size: 32px;
+      }
+
+      &-priceBlock{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      &-price{
+        font-size: 42px;
+        line-height: 100%;
+
+        .info{
+          font-size: 32px;
+        }
       }
     }
   }
