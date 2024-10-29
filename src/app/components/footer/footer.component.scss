@@ -15,6 +15,7 @@
   &__nav {
     display: flex;
     gap: 100px;
+    width: 100%;
 
     &-list {
       display: flex;
@@ -51,7 +52,7 @@
         cursor: default;
       }
 
-      &-adress{
+      &-address{
         color: white;
         font-size: 12px;
       }
@@ -65,6 +66,11 @@
           }
         }
       }
+    }
+
+    iframe{
+      height: 300px;
+      width: 100%;
     }
   }
 }
