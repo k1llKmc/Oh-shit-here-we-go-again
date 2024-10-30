@@ -33,7 +33,7 @@ $index: calc(1vh + 1vw);
   font-size: 20px;
 }
 
-.info{
+.info {
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -46,4 +46,45 @@ $index: calc(1vh + 1vw);
 button {
   border-radius: 7px;
   cursor: pointer;
+}
+
+.transitionOverlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #181818;
+  transition: .7s ease-in-out;
+  user-select: none;
+
+  transform: translateY(-100%);
+
+  &.redirect{
+    transform: translateY(0%);
+  }
+
+  img {
+    width: 20%;
+  }
+
+  p{
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.4);
+    animation: fade 3s infinite;
+  }
+
+  @keyframes fade {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
 }
