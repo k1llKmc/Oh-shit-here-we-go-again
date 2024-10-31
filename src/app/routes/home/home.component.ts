@@ -30,7 +30,7 @@ export class HomeComponent {
   constructor(private routingAnimationService: RoutingAnimationService) {
   }
 
-  navigateToCourse(courseId: string) {
-    this.routingAnimationService.redirectTo(`/course/${courseId}`);
+  navigateToCourse(route: string) {
+    this.routingAnimationService.redirectTo(route);
   }
 }

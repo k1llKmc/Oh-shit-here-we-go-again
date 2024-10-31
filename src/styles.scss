@@ -18,6 +18,10 @@ $index: calc(1vh + 1vw);
   scroll-behavior: smooth;
 }
 
+a{
+  cursor: pointer;
+}
+
 .body {
   padding: 20px 40px;
   background-color: #181818;
@@ -55,28 +59,23 @@ button {
   justify-content: center;
   gap: 20px;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #181818;
-  transition: .7s ease-in-out;
+  top: -15%;
+  left: -10%;
+  right: -10%;
+  bottom: -15%;
+  transition: 1.3s cubic-bezier(0.68, -0.55, 0.17, 1.5);
   user-select: none;
+  background-image: linear-gradient(0deg, #181818, #282828);
 
   transform: translateY(-100%);
 
   &.redirect{
     transform: translateY(0%);
+
   }
 
   img {
     width: 20%;
-  }
-
-  p{
-    font-size: 32px;
-    color: rgba(255, 255, 255, 0.4);
-    animation: fade 3s infinite;
   }
 
   @keyframes fade {

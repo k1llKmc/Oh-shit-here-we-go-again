@@ -10,13 +10,13 @@ export class RoutingAnimationService {
   }
 
   redirectTo(route: string) {
-    const header = document.querySelector('.transitionOverlay');
-    if (header) {
-      header.classList.add('redirect');
+    const overlay = document.querySelector('.transitionOverlay');
+    if (overlay) {
+      overlay.classList.add('redirect');
       setTimeout(() => {
         this.router.navigate([route]);
-        header.classList.remove('redirect');
-      }, 2000);
+        overlay.classList.remove('redirect');
+      }, 2400);
     }
   }
 }

@@ -3,11 +3,12 @@
   justify-content: space-between;
   align-items: center;
   user-select: none;
+  position: relative;
 
   &-logo {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
   }
 
   &__nav {
@@ -19,17 +20,18 @@
       display: flex;
       align-items: center;
       gap: 20px;
+      cursor: pointer;
     }
 
     &-link {
       font-size: 24px;
       color: white;
 
-      select{
-        background-color: transparent;
+      select {
         font-size: 24px;
         color: #fff;
         background-color: #181818;
+        cursor: pointer;
       }
     }
 
