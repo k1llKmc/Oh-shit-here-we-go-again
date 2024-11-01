@@ -67,11 +67,12 @@ button {
   user-select: none;
   background-image: linear-gradient(0deg, #181818, #282828);
 
-  transform: translateY(-100%);
+  scale: 0;
+  opacity: 0;
 
   &.redirect{
-    transform: translateY(0%);
-
+    scale: 1;
+    opacity: 1;
   }
 
   img {
