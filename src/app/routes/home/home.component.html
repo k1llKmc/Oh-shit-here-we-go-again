@@ -21,20 +21,18 @@
 
     <div class="home__grid__smallBlock event">
       <h3 class="home__grid__smallBlock-title">{{ events[0].title }}</h3>
-      <p class="home__grid__smallBlock-more">Подробнее</p>
       <img class="home__grid__smallBlock-img" [src]="'/assets/icons/' + events[0].key" alt="">
     </div>
 
     <div class="home__grid__bigBlock">
       <h3>Записаться на <p class="highlighted">экскурсию</p></h3>
-      <form action="" class="home__grid__bigBlock-form">
-        <input type="text" placeholder="Ф.И.О">
-        <input type="text" placeholder="(XX)XXX-XX-XX" appPhoneMask required>
+      <form (ngSubmit)="onSubmit()" class="home__grid__bigBlock-form">
+        <input type="text" placeholder="Ф.И.О" [(ngModel)]="fullName" name="fullName" required>
+        <input type="text" placeholder="(XX)XXX-XX-XX" appPhoneMask [(ngModel)]="phone" name="phone" required>
       </form>
-      <button type="button">Отправить заявку</button>
+      <button type="button" (click)="onSubmit()">Отправить заявку</button>
     </div>
   </div>
 </div>
 <app-why></app-why>
 <app-courses></app-courses>
-<!---->

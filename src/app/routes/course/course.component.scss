@@ -68,6 +68,7 @@
       background-image: url('../../../../public/assets/icons/bg/Vector 16.svg');
       background-repeat: no-repeat;
       background-position: 100% 100%;
+      user-select: none;
 
       &.byParts {
         border: #61d93e 3px solid;

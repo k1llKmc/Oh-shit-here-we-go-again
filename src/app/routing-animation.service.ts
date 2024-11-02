@@ -15,8 +15,10 @@ export class RoutingAnimationService {
       overlay.classList.add('redirect');
       setTimeout(() => {
         this.router.navigate([route]);
+      }, 1000);
+      setTimeout(() => {
         overlay.classList.remove('redirect');
-      }, 2400);
+      }, 2400)
     }
   }
 }

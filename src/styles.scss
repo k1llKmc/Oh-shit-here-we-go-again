@@ -1,5 +1,23 @@
 $index: calc(1vh + 1vw);
 
+::-webkit-scrollbar {
+  width: 8px; /* Уменьшает ширину вертикальной полосы прокрутки */
+  height: 8px; /* Уменьшает высоту горизонтальной полосы прокрутки */
+}
+
+::-webkit-scrollbar-track {
+  background: #3c3c3c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #282828;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #222222;
+}
+
 @font-face {
   font-family: "Onest";
   src: url("../public/assets/fonts/Onest.ttf");
@@ -18,7 +36,7 @@ $index: calc(1vh + 1vw);
   scroll-behavior: smooth;
 }
 
-a{
+a {
   cursor: pointer;
 }
 
@@ -69,22 +87,15 @@ button {
 
   scale: 0;
   opacity: 0;
+  filter: blur(100px);
 
-  &.redirect{
+  &.redirect {
     scale: 1;
     opacity: 1;
+    filter: blur(0);
   }
 
   img {
     width: 20%;
-  }
-
-  @keyframes fade {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
   }
 }

@@ -1,11 +1,12 @@
 <div class="courseDetails">
-  <div class="courseDetails-top"><img class="courseDetails-img" [src]="'/assets/icons/' + card?.key" alt="">
+  <div class="courseDetails-top">
+    <img class="courseDetails-img" [src]="'/assets/icons/' + card?.key" alt="">
     <h2 class="courseDetails-title">{{ card?.name }}</h2>
   </div>
-  <span class=" courseDetails-descr">{{ card?.descr }}</span>
+  <span class=" courseDetails-descr">{{ card?.description }}</span>
   <div class="courseDetails__what">
     <h3 class="courseDetails__what-title">Чем занимается спец. этой должности?</h3>
-    <span class="courseDetails__what-text">{{ card?.what }}</span>
+    <span class="courseDetails__what-text">{{ card?.roleDescription }}</span>
   </div>
   <app-why></app-why>
   <div class="courseDetails__priceList">
@@ -15,8 +16,11 @@
       <div class="courseDetails__priceList__block fullPaid">
         <h4 class="courseDetails__priceList__block-title">Стоимость всего курса:</h4>
         <div class="courseDetails__priceList__block-priceBlock">
-          <span class="courseDetails__priceList__block-price"> {{ ((card?.duration ?? 0) * (card?.price ?? 0)) | priceFormat }} cум</span>
-          <span class="footnote">( {{ card?.duration }} мес. x {{ (card?.price ?? 0) | priceFormat }} сум/мес. )<p class="attention">*</p></span>
+          <span
+            class="courseDetails__priceList__block-price"> {{ ((card?.duration ?? 0) * (card?.price ?? 0)) | priceFormat }}
+            cум</span>
+          <span class="footnote">( {{ card?.duration }} мес. x {{ (card?.price ?? 0) | priceFormat }} сум/мес. )<p
+            class="attention">*</p></span>
         </div>
       </div>
       <div class="courseDetails__priceList__block byParts">
@@ -26,7 +30,6 @@
         </span>
         <div class="popular">Популярно!</div>
       </div>
-      <button class="courseDetails__priceList-btn"> Записаться на курс </button>
     </div>
   </div>
   <app-sign-up></app-sign-up>

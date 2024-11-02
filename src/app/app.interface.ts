@@ -2,10 +2,10 @@ export interface Course {
   key: any;
   id: string;
   name: string;
-  descr: string;
+  description: string;
   duration: number;
   price: number;
-  what: string,
+  roleDescription: string,
 }
 
 export interface Event {
