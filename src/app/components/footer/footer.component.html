@@ -4,35 +4,19 @@
     <div class="footer__nav-block pages">
       <h3 class="footer__nav-block-title">Страницы</h3>
       <ul class="footer__nav-list">
-        <a routerLink="/">
-          <li class="footer__nav-link">Главная</li>
-        </a>
-        <a routerLink="/about">
-          <li class="footer__nav-link">О нас</li>
-        </a>
-        <a routerLink="/events">
-          <li class="footer__nav-link">Ивенты</li>
-        </a>
+          <li (click)="navigateToCourse('/')" class="footer__nav-link">Главная</li>
+          <li (click)="navigateToCourse('/about')"  class="footer__nav-link">О нас</li>
+          <li (click)="navigateToCourse('/events')"  class="footer__nav-link">Ивенты</li>
       </ul>
     </div>
     <div class="footer__nav-block courses">
       <h3 class="footer__nav-block-title">Курсы</h3>
       <ul class="footer__nav-list">
-        <a routerLink="/course/01">
-          <li class="footer__nav-link">Frontend</li>
-        </a>
-        <a routerLink="/course/02">
-          <li class="footer__nav-link">Backend</li>
-        </a>
-        <a routerLink="/course/03">
-          <li class="footer__nav-link">Введение в кибербезопасность</li>
-        </a>
-        <a routerLink="/course/04">
-          <li class="footer__nav-link">Graphic Design</li>
-        </a>
-        <a routerLink="/course/05">
-          <li class="footer__nav-link">Motion Design</li>
-        </a>
+          <li (click)="navigateToCourse('/course/01')" class="footer__nav-link">Frontend</li>
+          <li (click)="navigateToCourse('/course/02')" class="footer__nav-link">Backend</li>
+          <li (click)="navigateToCourse('/course/03')" class="footer__nav-link">Введение в кибербезопасность</li>
+          <li (click)="navigateToCourse('/course/04')" class="footer__nav-link">Graphic Design</li>
+          <li (click)="navigateToCourse('/course/05')" class="footer__nav-link">Motion Design</li>
       </ul>
     </div>
     <div id="contacts" class="footer__nav-block contacts">

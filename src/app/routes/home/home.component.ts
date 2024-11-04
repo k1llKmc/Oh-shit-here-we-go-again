@@ -69,7 +69,7 @@ export class HomeComponent implements AfterViewInit {
       opacity: 0,
       y: 50,
       duration: 1,
-      delay: 1.8,
+      delay: .5,
       stagger: 0.2,
       filter: 'blur(10px)',
       scrollTrigger: {

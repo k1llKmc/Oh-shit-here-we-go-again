@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import {RoutingAnimationService} from "../../routing-animation.service";
 
 @Component({
   selector: 'app-footer',
@@ -9,5 +10,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+  constructor(private routingAnimationService: RoutingAnimationService) {
+  }
 
+  navigateToCourse(route: string) {
+    this.routingAnimationService.redirectTo(route);
+  }
 }

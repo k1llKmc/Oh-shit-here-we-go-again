@@ -1,12 +1,12 @@
 <div id="courses" class="courses">
-  <h3 class="courses-title">Курсы</h3>
+  <h3 class="courses-title">Наши курсы</h3>
   <div class="f-carousel" id="myCarousel">
     <div class="f-carousel__viewport">
       <div class="f-carousel__track">
         <div class="f-carousel__slide" *ngFor="let course of courses">
           <h3 class="f-carousel__slide-title">{{ course.name }}</h3>
           <p class="f-carousel__slide-duration">{{ course.duration }} мес.</p>
-          <p class="f-carousel__slide-description">{{ course.descr }}</p>
+          <p class="f-carousel__slide-description">{{ course.description }}</p>
           <img class="f-carousel__slide-img" [src]="'/assets/icons/' + course.key " alt="">
         </div>
       </div>

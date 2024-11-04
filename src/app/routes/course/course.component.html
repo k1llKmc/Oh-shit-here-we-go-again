@@ -9,26 +9,35 @@
     <span class="courseDetails__what-text">{{ card?.roleDescription }}</span>
   </div>
   <app-why></app-why>
+  <!--  <div class="courseDetails__priceList">-->
+  <!--    <h3 class="courseDetails__priceList-title">Стоимость <p class="highlighted">курса</p>-->
+  <!--    </h3>-->
+  <!--    <div class="courseDetails__priceList__grid">-->
+  <!--      <div class="courseDetails__priceList__block fullPaid">-->
+  <!--        <h4 class="courseDetails__priceList__block-title">Стоимость всего курса:</h4>-->
+  <!--        <div class="courseDetails__priceList__block-priceBlock">-->
+  <!--          <span-->
+  <!--            class="courseDetails__priceList__block-price"> {{ ((card?.duration ?? 0) * (card?.price ?? 0)) * 0.9 | priceFormat  }}-->
+  <!--            cум <p class="oldPrice">{{ ((card?.duration ?? 0) * (card?.price ?? 0)) | priceFormat  }} сум</p></span>-->
+  <!--          <span class="footnote">( {{ card?.duration }} мес. x {{ (card?.price ?? 0) | priceFormat }} сум/мес. )<p-->
+  <!--            class="attention">*</p></span>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--      <div class="courseDetails__priceList__block byParts">-->
+  <!--        <h4 class="courseDetails__priceList__block-title">Оплата по месячно:</h4>-->
+  <!--        <span class="courseDetails__priceList__block-price"> {{ (card?.price ?? 0) |priceFormat }} сум/мес.-->
+  <!--          <span class="info">( {{ card?.duration }} мес. )</span>-->
+  <!--        </span>-->
+  <!--        <div class="popular">Популярно!</div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
   <div class="courseDetails__priceList">
-    <h3 class="courseDetails__priceList-title">Стоимость <p class="highlighted">курса</p>
-    </h3>
-    <div class="courseDetails__priceList__grid">
-      <div class="courseDetails__priceList__block fullPaid">
-        <h4 class="courseDetails__priceList__block-title">Стоимость всего курса:</h4>
-        <div class="courseDetails__priceList__block-priceBlock">
-          <span
-            class="courseDetails__priceList__block-price"> {{ ((card?.duration ?? 0) * (card?.price ?? 0)) | priceFormat }}
-            cум</span>
-          <span class="footnote">( {{ card?.duration }} мес. x {{ (card?.price ?? 0) | priceFormat }} сум/мес. )<p
-            class="attention">*</p></span>
-        </div>
-      </div>
-      <div class="courseDetails__priceList__block byParts">
-        <h4 class="courseDetails__priceList__block-title">Оплата по месячно:</h4>
-        <span class="courseDetails__priceList__block-price"> {{ (card?.price ?? 0) |priceFormat }} сум/мес.
-          <span class="info">( {{ card?.duration }} мес. )</span>
-        </span>
-        <div class="popular">Популярно!</div>
+    <div class="courseDetails__priceList__block fullPrice"></div>
+    <div class="courseDetails__priceList__block byParts">
+      <h3 class="courseDetails__priceList__block-title">Помесячная оплата</h3>
+      <div class="courseDetails__priceList__block-price">
+        <h4>{{ (card?.price ?? 0) }} сум/мес.</h4>
       </div>
     </div>
   </div>
