@@ -24,13 +24,13 @@ export class WhyComponent implements AfterViewInit {
 
     gsap.from(allElements, {
       opacity: 0,
-      y: 50,
-      duration: 1,
+      y: 25,
+      duration: .5,
       stagger: 0.2,
       filter: 'blur(10px)',
       scrollTrigger: {
         trigger: allElements[0],
-        start: "top 80%",
+        start: "top 70%",
         toggleActions: "play none none none",
       },
     });

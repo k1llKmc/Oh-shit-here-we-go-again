@@ -1,10 +1,11 @@
-import { Courses } from './../../app.data';
-import { NgFor } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { Carousel } from '@fancyapps/ui';
+import {Courses} from './../../app.data';
+import {NgFor} from '@angular/common';
+import {Component, ElementRef, OnInit} from '@angular/core';
+import {Carousel} from '@fancyapps/ui';
 import '@fancyapps/ui/dist/carousel/carousel.css';
-import { Course } from '../../app.interface';
-import { RouterLink, RouterModule } from '@angular/router';
+import {Course} from '../../app.interface';
+import {RouterLink, RouterModule} from '@angular/router';
+import {RoutingAnimationService} from "../../routing-animation.service";
 
 @Component({
   selector: 'app-courses',
@@ -16,6 +17,9 @@ import { RouterLink, RouterModule } from '@angular/router';
 export class CoursesComponent implements OnInit {
   courses: Course[] = Courses;
 
+  constructor(private routingAnimationService: RoutingAnimationService) {
+  }
+
   ngOnInit() {
     const element = document.getElementById('myCarousel');
     if (element) {
@@ -23,5 +27,9 @@ export class CoursesComponent implements OnInit {
         infinite: true,
       });
     }
+  }
+
+  navigateToCourse(route: string) {
+    this.routingAnimationService.redirectTo(route);
   }
 }

@@ -6,7 +6,8 @@ import {WhyComponent} from "../../components/why/why.component";
 import {PriceFormatPipe} from "../../pipes/price-format.pipe";
 import {SignUpComponent} from "../../components/sign-up/sign-up.component";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {RoutingAnimationService} from "../../routing-animation.service";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -20,7 +21,11 @@ gsap.registerPlugin(ScrollTrigger)
 export class CourseComponent implements AfterViewInit {
   card: Course | undefined;
 
-  constructor(private route: ActivatedRoute, private router: Router, private el: ElementRef) {
+  constructor(private route: ActivatedRoute, private router: Router, private el: ElementRef, private routingAnimationService: RoutingAnimationService) {
+  }
+
+  navigateToCourse(route: string) {
+    this.routingAnimationService.redirectTo(route);
   }
 
   ngOnInit(): void {
@@ -49,8 +54,8 @@ export class CourseComponent implements AfterViewInit {
 
     gsap.from(allElements, {
       opacity: 0,
-      y: 50,
-      duration: 1,
+      y: 25,
+      duration: .5,
       delay: .5,
       stagger: 0.2,
       filter: 'blur(10px)',
@@ -62,8 +67,8 @@ export class CourseComponent implements AfterViewInit {
     });
     gsap.from(priceElements, {
       opacity: 0,
-      y: 50,
-      duration: 1,
+      y: 25,
+      duration: .5,
       stagger: 0.2,
       filter: 'blur(10px)',
       scrollTrigger: {

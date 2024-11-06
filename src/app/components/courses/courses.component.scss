@@ -10,14 +10,16 @@
   }
 
   .f-carousel {
-    width: 50%;
     &__slide {
+      width: 100%;
+      cursor: pointer;
 
-      &:not(.is-selected){
+      &:not(.is-selected) {
         scale: 0.9;
         filter: blur(20px);
         opacity: 0;
       }
+
       height: 600px;
       display: flex;
       flex-direction: column;
@@ -27,11 +29,12 @@
       transition: .4s;
       background-color: #282828;
       border-radius: 20px;
-      padding: 25px 50px;
+      padding: 20px 40px;
       background-image: url("../../../../public/assets/icons/bg/Course-big.svg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: 0 100%;
+
       &-more {
         font-size: 16px;
         font-weight: 5000;
@@ -54,15 +57,15 @@
         color: white;
       }
 
-      &-description{
+      &-description {
         color: white;
       }
 
-      &-img{
+      &-img {
         width: 240px;
         position: absolute;
-        bottom: 25px;
-        right: 50px;
+        bottom: 20px;
+        right: 40px;
       }
     }
   }

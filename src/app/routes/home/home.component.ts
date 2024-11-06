@@ -8,9 +8,10 @@ import {WhyComponent} from '../../components/why/why.component';
 import {CoursesComponent} from '../../components/courses/courses.component';
 import {RouterLink} from '@angular/router';
 import {RoutingAnimationService} from '../../routing-animation.service';
-import {PhoneMaskDirective} from './phone-mask.directive';
+import {PhoneMaskDirective} from '../../phone-mask.directive';
 import {FormsModule} from '@angular/forms';
 import gsap from 'gsap';
+
 
 @Component({
   selector: 'app-home',
@@ -64,17 +65,24 @@ export class HomeComponent implements AfterViewInit {
       '.home__grid__mainBlock, .home__grid__smallBlock, .home__grid__bigBlock'
     );
 
+    gsap.from(this.el.nativeElement.querySelector('.home__hero-title'), {
+      opacity: 0,
+      y: 25,
+      duration: .5,
+      delay: .5,
+      stagger: 0.2,
+      filter: 'blur(10px)',
+    })
 
     gsap.from(allElements, {
       opacity: 0,
-      y: 50,
-      duration: 1,
-      delay: .5,
+      y: 25,
+      duration: 0.5,
       stagger: 0.2,
       filter: 'blur(10px)',
       scrollTrigger: {
         trigger: allElements[0],
-        start: "top 80%",
+        start: "top 70%",
         toggleActions: "play none none none",
       },
     });

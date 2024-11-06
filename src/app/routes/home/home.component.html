@@ -1,9 +1,13 @@
 <div class="home">
+  <div class="home__hero">
+    <img src="assets/icons/Ustudy.svg" alt="">
+    <span class="home__hero-title">Make people <p class="highlighted">IT</p> minded</span>
+  </div>
   <div class="home__grid">
     <div class="home__grid__mainBlock">
-      <h1 class="home__grid__mainBlock-title">
+      <h2 class="home__grid__mainBlock-title">
         Узнайте, как мы готовим IT специалистов <p class="highlighted">мирового уровня!</p>
-      </h1>
+      </h2>
       <span class="home__grid__mainBlock-description">
         Приходите на бесплатную экскурсию по нашей академии и окунитесь в мир современных технологий.
       </span>
@@ -30,7 +34,9 @@
         <input type="text" placeholder="Ф.И.О" [(ngModel)]="fullName" name="fullName" required>
         <input type="text" placeholder="(XX)XXX-XX-XX" appPhoneMask [(ngModel)]="phone" name="phone" required>
       </form>
-      <button type="button" (click)="onSubmit()">Отправить заявку</button>
+      <a href="https://t.me/Ustudy_AcademyRequests_bot">
+        <button type="button" (click)="onSubmit()">Отправить заявку</button>
+      </a>
     </div>
   </div>
 </div>

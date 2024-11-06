@@ -28,9 +28,9 @@ export class HeaderComponent implements AfterViewInit {
 
     gsap.from(headerElements, {
       opacity: 0,
-      y: 50,
+      y: 25,
       delay: 0.7,
-      duration: 1,
+      duration: .5,
       stagger: 0.2,
       filter: "blur(10px)",
       scrollTrigger: {

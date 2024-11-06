@@ -33,12 +33,20 @@
   <!--    </div>-->
   <!--  </div>-->
   <div class="courseDetails__priceList">
-    <div class="courseDetails__priceList__block fullPrice"></div>
+    <div class="courseDetails__priceList__block fullPrice">
+      <h3 class="courseDetails__priceList__block-title">Оплата разом</h3>
+      <div class="courseDetails__priceList__block-price">
+        <div class="oldPrice"><p>{{ ((card?.price ?? 0) * (card?.duration ?? 0)) | priceFormat }} cум</p> <span
+          class="discount">-5%</span></div>
+        <h4>{{ ((card?.price ?? 0) * (card?.duration ?? 0)) * 0.95 | priceFormat }} сум</h4>
+      </div>
+    </div>
     <div class="courseDetails__priceList__block byParts">
       <h3 class="courseDetails__priceList__block-title">Помесячная оплата</h3>
       <div class="courseDetails__priceList__block-price">
-        <h4>{{ (card?.price ?? 0) }} сум/мес.</h4>
+        <h4>{{ (card?.price ?? 0)| priceFormat }} сум/мес.</h4>
       </div>
+      <div class="popular">Популярно!</div>
     </div>
   </div>
   <app-sign-up></app-sign-up>
