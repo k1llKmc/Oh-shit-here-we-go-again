@@ -11,7 +11,7 @@
     align-items: center;
     gap: 10px;
 
-    &-main{
+    &-main {
       cursor: pointer;
     }
   }
@@ -35,14 +35,19 @@
       select {
         font-size: 24px;
         color: #fff;
-        background-color: #181818;
+        background-color: transparent;
         cursor: pointer;
+        border-radius: 20px;
+
+        option {
+          color: #282828;
+        }
       }
     }
 
     &-btn {
       padding: 6px 20px;
-      background-color: #61d93e;
+      background-color: #3461cc;
       font-size: 24px;
       color: white;
     }

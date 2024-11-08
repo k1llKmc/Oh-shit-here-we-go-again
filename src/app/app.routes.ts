@@ -1,9 +1,9 @@
-import { Routes } from '@angular/router';
-import { HomeComponent } from './routes/home/home.component';
-import { AboutComponent } from './routes/about/about.component';
-import { EventsComponent } from './routes/events/events.component';
-import { CourseComponent } from './routes/course/course.component';
-import { NotFoundComponent } from './routes/not-found/not-found.component';
+import {Routes} from '@angular/router';
+import {HomeComponent} from './routes/home/home.component';
+import {AboutComponent} from './routes/about/about.component';
+import {EventComponent} from './routes/event/event.component';
+import {CourseComponent} from './routes/course/course.component';
+import {NotFoundComponent} from './routes/not-found/not-found.component';
 
 export const routes: Routes = [
   {
@@ -16,7 +16,7 @@ export const routes: Routes = [
   },
   {
     path: 'events',
-    component: EventsComponent,
+    component: EventComponent,
   },
   {
     path: 'course/:id',

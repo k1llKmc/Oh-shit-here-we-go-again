@@ -3,6 +3,7 @@
     <img src="assets/icons/Ustudy.svg" alt="">
     <span class="home__hero-title">Make people <p class="highlighted">IT</p> minded</span>
   </div>
+
   <div class="home__grid">
     <div class="home__grid__mainBlock">
       <h2 class="home__grid__mainBlock-title">
@@ -15,7 +16,7 @@
     </div>
 
     <div class="home__grid__smallBlock course" *ngFor="let course of courses"
-         (click)="navigateToCourse('/course/' +course.id)">
+         (click)="navigateToCourse('/course/' + course.id)">
       <div class="home__grid__smallBlock-text">
         <h3 class="home__grid__smallBlock-title">{{ course.name }}</h3>
         <p class="home__grid__smallBlock-duration">{{ course.duration }} мес.</p>
@@ -23,9 +24,9 @@
       <img class="home__grid__smallBlock-img" [src]="'/assets/icons/' + course.key" alt="">
     </div>
 
-    <div class="home__grid__smallBlock event">
-      <h3 class="home__grid__smallBlock-title">{{ events[0].title }}</h3>
-      <img class="home__grid__smallBlock-img" [src]="'/assets/icons/' + events[0].key" alt="">
+    <div (click)="openInNewTab('https://t.me/internship_ITUZ')" class="home__grid__smallBlock event">
+      <h3 class="home__grid__smallBlock-title">{{ event.title }}</h3>
+      <img class="home__grid__smallBlock-img" [src]="'/assets/icons/' + event.key" alt="">
     </div>
 
     <div class="home__grid__bigBlock">
@@ -34,11 +35,12 @@
         <input type="text" placeholder="Ф.И.О" [(ngModel)]="fullName" name="fullName" required>
         <input type="text" placeholder="(XX)XXX-XX-XX" appPhoneMask [(ngModel)]="phone" name="phone" required>
       </form>
-      <a href="https://t.me/Ustudy_AcademyRequests_bot">
-        <button type="button" (click)="onSubmit()">Отправить заявку</button>
-      </a>
+      <button type="button" (click)="onSubmit()">Отправить заявку</button>
     </div>
   </div>
 </div>
-<app-why></app-why>
+
+<app-why-home></app-why-home>
 <app-courses></app-courses>
+<app-events></app-events>
+

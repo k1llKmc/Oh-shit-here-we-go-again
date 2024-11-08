@@ -29,7 +29,7 @@ export class HeaderComponent implements AfterViewInit {
     gsap.from(headerElements, {
       opacity: 0,
       y: 25,
-      delay: 0.7,
+      delay: .7,
       duration: .5,
       stagger: 0.2,
       filter: "blur(10px)",

@@ -70,6 +70,10 @@ button {
   cursor: pointer;
 }
 
+.more{
+  border: 3px solid #61d93e;
+}
+
 .transitionOverlay {
   display: flex;
   flex-direction: column;
@@ -99,3 +103,4 @@ button {
     width: 20%;
   }
 }
+

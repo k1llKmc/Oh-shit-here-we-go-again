@@ -1,23 +1,18 @@
 export interface Course {
-  key: any;
   id: string;
   name: string;
   description: string;
   duration: number;
   price: number;
   roleDescription: string,
+  key: string;
 }
 
 export interface Event {
-  key: any;
+  id: string;
   name: string;
   title: string;
   description: string;
-  prizes: {
-    first: string;
-    second: string;
-    third: string;
-  };
   startDate: string;
-  deadlineDate: string;
+  key: string;
 }

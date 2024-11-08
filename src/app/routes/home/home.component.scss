@@ -38,7 +38,7 @@
     &__mainBlock {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 10px;
       position: relative;
       overflow: hidden;
       background-color: #282828;
@@ -115,7 +115,7 @@
 
       &-title {
         white-space: nowrap;
-        max-width: 314px;
+        max-width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
         font-size: 32px;
