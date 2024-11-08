@@ -1,0 +1,12 @@
+<div class="events">
+  <h2 class="events-title">Ивенты</h2>
+  <div class="events__grid">
+    <div (click)="openInNewTab('https://t.me/internship_ITUZ')" class="events__block" *ngFor="let event of events">
+      <h3 class="events__block-name">{{ event.name }}</h3>
+      <span class="events__block-title">{{ event.title }}</span>
+    </div>
+    <div (click)="navigateToCourse('/events')" class="events__block more">
+      Все ивенты
+    </div>
+  </div>
+</div>

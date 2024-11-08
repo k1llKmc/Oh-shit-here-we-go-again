@@ -1,0 +1,50 @@
+.why {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 60px 0 20px;
+
+  &-title {
+    color: white;
+    font-size: 48px;
+  }
+
+  &__grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 400px);
+    gap: 20px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: #282828;
+    border-radius: 20px;
+
+    &.more {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+
+      font-size: 42px;
+    }
+
+    &-title {
+      font-size: 32px;
+      color: white;
+      line-height: 100%;
+    }
+
+    &-description {
+      font-size: 24px;
+      line-height: 100%;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
