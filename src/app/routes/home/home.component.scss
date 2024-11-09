@@ -1,3 +1,16 @@
+.alert{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 24px;
+
+  &.warn{
+    background-color: #ff0000;
+  }
+}
 
 .home {
   display: flex;
@@ -114,10 +127,6 @@
       }
 
       &-title {
-        white-space: nowrap;
-        max-width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
         font-size: 32px;
         font-weight: 700;
         color: white;
@@ -168,12 +177,19 @@
       }
 
       &-form {
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: 5px;
         align-items: start;
 
-        input {
+        label{
+          position: absolute;
+          left: 10px;
+          top: 64%;
+        }
+
+        input{
           max-width: 400px;
           width: 400px;
           padding: 10px;
@@ -181,6 +197,11 @@
           font-size: 16px;
           color: rgba(255, 255, 255);
           font-weight: 400;
+          border-radius: 5px;
+
+          &#phoneNum{
+            padding: 10px 53px;
+          }
         }
       }
     }

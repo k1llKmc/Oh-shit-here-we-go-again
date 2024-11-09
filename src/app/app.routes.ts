@@ -23,7 +23,7 @@ export const routes: Routes = [
     component: CourseComponent,
   },
   {
-    path: 'not-found',
+    path: '**',
     component: NotFoundComponent,
   },
 ];

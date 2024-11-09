@@ -1,4 +1,4 @@
-import {CommonModule, NgFor, NgIf} from '@angular/common';
+import {CommonModule, NgFor, NgIf} from "@angular/common";
 import {Courses, Events} from '../../app.data';
 import {Course} from '../../app.interface';
 import {Event} from '../../app.interface';
@@ -13,6 +13,7 @@ import gsap from 'gsap';
 import {WhyHomeComponent} from "../../components/why-home/why-home.component";
 import {EventsComponent} from "../../components/events/events.component";
 import {CoursesComponent} from "../../components/courses/courses.component";
+import {from} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -53,12 +54,47 @@ export class HomeComponent implements AfterViewInit {
   }
 
   onSubmit() {
-    if (!this.fullName || !this.phone) {
-      alert('Пожалуйста, заполните все поля.');
+    if (!this.fullName || !this.phone || this.phone.length < 13) {
+      alert('Пожалуйста, полностью заполните все поля.');
       return;
     }
-    window.open('https://t.me/Ustudy_AcademyRequests_bot', '_blank');
+
+    const botToken = '7565270244:AAGgKO7mjqB5z38kx8Do11JUgHM45pVg2jc';
+    const chatId = '@UstudyExcursionRequests';
+
+    const message = `Заявка на Экскурсию:
+      Имя: ${this.fullName}
+    Телефон: +998${this.phone}`;
+
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage;`
+    const data = {
+      chat_id: chatId,
+      text: message,
+      parse_mode: 'Markdown',
+    };
+
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.ok) {
+          alert('Сообщение отправлено!');
+        } else {
+          alert('Произошла ошибка при отправке сообщения.');
+          console.error('Ошибка при отправке сообщения:', data);
+        }
+      })
+      .catch(error => {
+        console.error('Ошибка:', error);
+        alert('Произошла ошибка при отправке сообщения.');
+      });
   }
+
 
   ngAfterViewInit() {
     this.animateAllElements();
@@ -92,3 +128,4 @@ export class HomeComponent implements AfterViewInit {
     });
   }
 }
+

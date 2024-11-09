@@ -24,16 +24,13 @@
       <img class="home__grid__smallBlock-img" [src]="'/assets/icons/' + course.key" alt="">
     </div>
 
-    <div (click)="openInNewTab('https://t.me/internship_ITUZ')" class="home__grid__smallBlock event">
-      <h3 class="home__grid__smallBlock-title">{{ event.title }}</h3>
-      <img class="home__grid__smallBlock-img" [src]="'/assets/icons/' + event.key" alt="">
-    </div>
-
     <div class="home__grid__bigBlock">
       <h3>Записаться на <p class="highlighted">экскурсию</p></h3>
       <form (ngSubmit)="onSubmit()" class="home__grid__bigBlock-form">
-        <input type="text" placeholder="Ф.И.О" [(ngModel)]="fullName" name="fullName" required>
-        <input type="text" placeholder="(XX)XXX-XX-XX" appPhoneMask [(ngModel)]="phone" name="phone" required>
+        <input type="text" placeholder="Имя Фамилия" [(ngModel)]="fullName" name="fullName" required>
+        <label for="phoneNum">+998</label>
+        <input id="phoneNum" type="text" placeholder="(XX)XXX-XX-XX" appPhoneMask [(ngModel)]="phone" name="phone"
+               required>
       </form>
       <button type="button" (click)="onSubmit()">Отправить заявку</button>
     </div>
@@ -44,3 +41,4 @@
 <app-courses></app-courses>
 <app-events></app-events>
 
+<!--<div class="alert warn">Заполните все поля!</div>-->

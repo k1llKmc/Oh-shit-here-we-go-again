@@ -5,6 +5,7 @@ import {NgForOf} from "@angular/common";
 import {Course} from "../../app.interface";
 import {Courses} from "../../app.data";
 import gsap from 'gsap';
+import {LanguageService} from "../../translation.service";
 
 @Component({
   selector: 'app-header',
@@ -16,11 +17,23 @@ import gsap from 'gsap';
 export class HeaderComponent implements AfterViewInit {
   courses: Course[] = Courses;
 
-  constructor(private routingAnimationService: RoutingAnimationService, private el: ElementRef) {
+  constructor(private routingAnimationService: RoutingAnimationService, private el: ElementRef,private languageService: LanguageService,) {
+  }
+
+  changeLanguage(language: string) {
+    this.languageService.setLanguage(language);
+  }
+
+  getCurrentLanguage() {
+    return this.languageService.getLanguage();
   }
 
   navigateToCourse(route: string) {
     this.routingAnimationService.redirectTo(route);
+  }
+
+  navigateToFooter() {
+    window.scrollTo(0, 99999999);
   }
 
   ngAfterViewInit() {

@@ -19,7 +19,7 @@ export class FooterComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const allElements = this.el.nativeElement.querySelectorAll('.footer-logo ,.footer__nav-block, .footer__nav-iframe');
+    const allElements = this.el.nativeElement.querySelectorAll('.footer-logo, .footer__nav-block, .footer__nav-iframe');
 
     gsap.from(allElements, {
       opacity: 0,

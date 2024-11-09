@@ -4,7 +4,7 @@
   align-items: center;
   user-select: none;
   position: relative;
-  transition: .3s;
+  transition: 0.3s ease;
 
   &-logo {
     display: flex;
@@ -13,6 +13,73 @@
 
     &-main {
       cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05) rotate(3deg);
+      }
+    }
+
+    &-more {
+      &:hover {
+        path {
+          transition: .3s ease-in-out;
+        }
+
+        path.uzinfocom-logo {
+          fill: #4C51C6;
+        }
+
+        path.uzinfocom-text {
+          fill: #FE830C;
+        }
+      }
+
+      &:not(hover) {
+        path {
+          transition: .3s ease-in-out;
+        }
+
+        path.uzinfocom-logo {
+          fill: #ffffff;
+        }
+
+        path.uzinfocom-text {
+          fill: #ffffff;
+        }
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 10;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: #ffffff;
+      transition: 0.3s;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
     }
   }
 
@@ -25,22 +92,65 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      cursor: pointer;
     }
 
     &-link {
       font-size: 24px;
-      color: white;
+      color: #ffffff;
+      position: relative;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #3461cc;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 2px;
+        background-color: #3461cc;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
 
       select {
         font-size: 24px;
-        color: #fff;
+        color: #ffffff;
         background-color: transparent;
+        border: none;
         cursor: pointer;
-        border-radius: 20px;
+        outline: none;
+        padding: 4px;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: rgba(52, 97, 204, 0.4);
+        }
 
         option {
-          color: #282828;
+          color: #ffffff;
+          background-color: #3461cc;
+          padding: 10px;
+          font-size: 20px;
+          border: none;
+          cursor: pointer;
+        }
+
+        option:checked,
+        option:focus,
+        option:hover {
+          background-color: #2b4fa3;
+          color: #ffffff;
         }
       }
     }

@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import {WhyComponent} from "../../components/why/why.component";
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  imports: [
+    WhyComponent
+  ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })

@@ -1,10 +1,12 @@
 <div class="courses">
   <h2 class="courses-title">Курсы</h2>
   <div class="courses__grid">
-    <div (click)="navigateToCourse('/course/' + course.id)" *ngFor="let course of courses" class="courses__block">
+    <div
+      *ngFor="let course of courses"
+      (click)="navigateToCourse('/course/' + course.id)"
+      class="courses__block">
       <h3 class="courses__block-title">{{ course.name }}</h3>
       <p class="courses__block-duration">{{ course.duration }} мес.</p>
     </div>
-    <div class="courses__block soon">Скоро...</div>
   </div>
 </div>
