@@ -3,6 +3,7 @@ import {Courses} from "../../app.data";
 import {Course} from "../../app.interface";
 import {NgForOf} from "@angular/common";
 import gsap from "gsap";
+import {RoutingAnimationService} from "../../routing-animation.service";
 
 
 @Component({
@@ -19,15 +20,20 @@ export class CoursesComponent implements AfterViewInit {
 
   protected readonly alert = alert;
 
-  constructor(private el: ElementRef,) {
+  constructor(private el: ElementRef, private routingAnimationService: RoutingAnimationService
+    ,) {
+  }
+
+  navigateToCourse(route: string) {
+    this.routingAnimationService.redirectTo(route);
   }
 
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.animateAllElements()
   }
 
-  private animateAllElements() {
+  animateAllElements() {
     const allElements = this.el.nativeElement.querySelectorAll(
       '.courses-title, .courses__block'
     );
